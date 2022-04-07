@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-#elrf&-_#s^#!c*%@lv*m8inqglncz!b85#bh^&gwit8j5y1km
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -64,7 +64,7 @@ ROOT_URLCONF = 'learning_log.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'learning_log/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,7 +138,7 @@ BOOTSTRAP3 = {
 }
 
 # Heroku settings
-if os.getcwd() != '/learning_log':
+if os.getcwd() != '/Users/macbookair/Desktop/learning_log':
     import dj_database_url
     DATABASES = {
         'default': dj_database_url.config(default='postgres://localhost'),
