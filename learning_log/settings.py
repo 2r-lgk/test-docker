@@ -138,10 +138,10 @@ BOOTSTRAP3 = {
 }
 
 # Heroku settings
-if os.getcwd() == '/app':
+if os.getcwd() == '/learning_log':
     import dj_database_url
     DATABASES = {
-        'default': dj_database_url.config(default='postgres://localhost')
+        'default': dj_database_url.config(default='postgres://localhost'),
     }
 
     # Honor the 'X-Forwarded-Proto' header for request.is_secure().
