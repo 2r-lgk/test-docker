@@ -20,7 +20,7 @@ def topics(request):
 @login_required
 def topic(request, topic_id):
 	"""Show a single topic and all its entries"""
-	topic = Topic.objects.get_object_or_404(Topic, id=topic_id)
+	topic = get_object_or_404(Topic, id=topic_id)
 	check_topic_owner(topic, request)
 
 	entries = topic.entry_set.order_by('-date_added')
